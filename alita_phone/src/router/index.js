@@ -1,12 +1,21 @@
 import Vue from 'vue'
-import TodoList from '../../src/TodoList'
+import Router from 'vue-router'
+import HelloWorld from '@/components/HelloWorld'
+import TodoList from '@/components/TodoList'
 
-Vue.config.productionTip = false
-
-new Vue({
-
-    el:'#app',
-    components:{TodoList},
-   template:'<TodoList/>'
-  }
-)
+Vue.use(Router)
+/* eslint-disable */
+export default new Router({
+  routes: [
+    {
+      path: '/HelloWorld',
+      name: 'HelloWorld',
+      component: HelloWorld
+    },
+    {
+      path: '/',
+      name: 'TodoList',
+      component: TodoList
+    }
+  ]
+})
